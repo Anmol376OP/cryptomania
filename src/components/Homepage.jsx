@@ -49,27 +49,66 @@ const Homepage = () => {
                                         <span>Daily Change : </span>
                                         <span>{millify(cryptos ? cryptos[0].change : 0)}%</span>
                                     </span>
-                                    <button>
+                                    <button className='CButton'>
                                         Read More
                                     </button>
-
                                 </div>
                             </div>
                         </Link>
                     </div>
                     <div className='Sec2Outbox'>
-                        <div className='Card-Container' id="silver">
-                            <div className='Inner-container'>
-
+                        <Link to='/'>
+                            <div className='Card-Container' id='silver'>
+                                <div className='Inner-container'>
+                                    <h3 className='cheading'>
+                                        2. {cryptos ? cryptos[1].name : 'Name'}
+                                        <img className='iconImg' src={cryptos ? cryptos[1].iconUrl : ''}></img>
+                                    </h3>
+                                    <span className='priceCrypto'>
+                                        <span>Price : </span>
+                                        <span>{millify(cryptos ? cryptos[1].price : 0)}</span>
+                                    </span>
+                                    <span className='priceCrypto'>
+                                        <span>MarketCap : </span>
+                                        <span>{millify(cryptos ? cryptos[1].marketCap : 0)}</span>
+                                    </span>
+                                    <span className='priceCrypto'>
+                                        <span>Daily Change : </span>
+                                        <span>{millify(cryptos ? cryptos[1].change : 0)}%</span>
+                                    </span>
+                                    <button className='CButton'>
+                                        Read More
+                                    </button>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     </div>
                     <div className='Sec2Outbox'>
-                        <div className='Card-Container' id='bronze'>
-                            <div className='Inner-container'>
-
+                        <Link to='/'>
+                            <div className='Card-Container' id='bronze'>
+                                <div className='Inner-container'>
+                                    <h3 className='cheading'>
+                                        3. {cryptos ? cryptos[2].name : 'Name'}
+                                        <img className='iconImg' src={cryptos ? cryptos[2].iconUrl : ''}></img>
+                                    </h3>
+                                    <span className='priceCrypto'>
+                                        <span>Price : </span>
+                                        <span>{millify(cryptos ? cryptos[2].price : 0)}</span>
+                                    </span>
+                                    <span className='priceCrypto'>
+                                        <span>MarketCap : </span>
+                                        <span>{millify(cryptos ? cryptos[2].marketCap : 0)}</span>
+                                    </span>
+                                    <span className='priceCrypto'>
+                                        <span>Daily Change : </span>
+                                        <span>{millify(cryptos ? cryptos[2].change : 0)}%</span>
+                                    </span>
+                                    <button className='CButton'>
+                                        Read More
+                                    </button>
+                                </div>
                             </div>
-                        </div>
+                        </Link>
                     </div>
 
                 </div>
