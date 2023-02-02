@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useGetCryptosQuery } from '../services/cryptoAPI';
 import '../styles/Homepage.css'
-import Img from '../assets/bg.jpg';
+import millify from 'millify';
 
 const Homepage = () => {
     const { data, isFetching } = useGetCryptosQuery();
-    console.log(data);
-
+    // console.log(data);
+    var cryptos = data?.data?.coins;
     return (
         <div className='Homepage-box'>
             <section className='bg-home'>
@@ -27,7 +27,52 @@ const Homepage = () => {
                 </div>
             </section>
             <section className='sec-2'>
-                This is section 2
+                <span className='top3text'>Top 3 trending cryptos</span>
+                <div className='secFlex'>
+                    <div className='Sec2Outbox'>
+                        <Link to='/'>
+                            <div className='Card-Container'>
+                                <div className='Inner-container'>
+                                    <h3 className='cheading'>
+                                        1. {cryptos ? cryptos[0].name : 'Name'}
+                                        <img className='iconImg' src={cryptos ? cryptos[0].iconUrl : ''}></img>
+                                    </h3>
+                                    <span className='priceCrypto'>
+                                        <span>Price : </span>
+                                        <span>{millify(cryptos ? cryptos[0].price : 0)}</span>
+                                    </span>
+                                    <span className='priceCrypto'>
+                                        <span>MarketCap : </span>
+                                        <span>{millify(cryptos ? cryptos[0].marketCap : 0)}</span>
+                                    </span>
+                                    <span className='priceCrypto'>
+                                        <span>Daily Change : </span>
+                                        <span>{millify(cryptos ? cryptos[0].change : 0)}%</span>
+                                    </span>
+                                    <button>
+                                        Read More
+                                    </button>
+
+                                </div>
+                            </div>
+                        </Link>
+                    </div>
+                    <div className='Sec2Outbox'>
+                        <div className='Card-Container' id="silver">
+                            <div className='Inner-container'>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div className='Sec2Outbox'>
+                        <div className='Card-Container' id='bronze'>
+                            <div className='Inner-container'>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </section>
         </div>
     )

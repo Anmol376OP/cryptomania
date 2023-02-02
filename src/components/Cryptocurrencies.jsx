@@ -14,7 +14,8 @@ const Cryptocurrencies = () => {
         <h2>Loading....</h2>
     </div>)
 
-    // console.log(cryptos.data.coins[0].name)
+    // console.log(cryptos[1])
+
     return (
         <div className='BoxCC'>
             {cryptos.map((index) => (
