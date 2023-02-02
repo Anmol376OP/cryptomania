@@ -1,0 +1,18 @@
+.BoxCC{
+    background: rgb(46, 45, 45);
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.CardContainer{
+    position: relative;
+    margin: 20px;
+    height: 280px;
+    width: 200px;
+    border: 2px solid white;
+
+}

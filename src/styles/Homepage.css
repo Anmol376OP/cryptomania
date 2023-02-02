@@ -1,0 +1,100 @@
+.bg-home{
+    height: 100vh;
+    width: 100%;
+    background: transparent;
+}
+.sec-2{
+    position: relative;
+    height: 100vh;
+    background: black;
+    color: white;
+}
+.home-heading-container{
+   display: flex;
+   align-items: center;
+   height: 100vh;
+   overflow: hidden;
+   justify-content: center;
+   /* justify-self: space-around   ; */
+}
+.image{
+    flex: 0.5;
+    width: 1000px;
+    height: 500px;
+    background-image: url('../assets/bit.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.Home-text{
+    flex: 0.5;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+}
+.HeadingText{
+    color: white;
+    font-size: 60px;
+    z-index: 2;
+}
+.cmania{
+    color: gold;
+    font-size: 80px;
+    z-index: 2;
+}
+.paragraphText{
+    color: white;
+    font-size: 20px;
+    z-index: 2;
+}
+@media (max-width:950px){
+    .home-heading-container{
+        flex-direction: column-reverse;
+    }
+    .image{
+        height: 300px;
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    .HeadingText{
+        font-size: 40px;
+    }
+    .cmania{
+        font-size: 60px;
+    }
+    .paragraphText{
+        font-size: 22px;
+    }
+}
+@media (max-width:450px){
+    .image{
+        height: 250px;
+    }
+    .HeadingText{
+        font-size: 30px;
+    }
+    .cmania{
+        font-size: 50px;
+    }
+    .paragraphText{
+        font-size: 16px;
+    }
+}
+@media (max-width:350px){
+    .image{
+        height: 200px;
+    }
+    .HeadingText{
+        font-size: 25px;
+    }
+    .cmania{
+        font-size: 40px;
+    }
+    .paragraphText{
+        font-size: 16px;
+    }
+}

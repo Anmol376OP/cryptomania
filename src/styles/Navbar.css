@@ -1,5 +1,5 @@
 .NavContainer{
-    background-color: rgb(0, 34, 66);
+    background: transparent;
     height: auto;
     align-items: center;
     padding-left: 40px;
@@ -38,6 +38,7 @@
 }
 .elem{
     text-decoration: none;
+    position: relative;
     color: white;
     font-size: 18px;
     transition: 0.5s ease;
@@ -46,8 +47,9 @@
 }
 .elem:hover,.elem.active{
     background-color: white;
-    color: rgb(0, 34, 66);
+    color: black;
 }
+
 #mobile{
     display: none;
 }
@@ -65,14 +67,21 @@
         left: -500px;
         width: 200px;
         height: 100vh;
-        background: rgb(0, 34, 66);
+        background: black;
         padding-top: 40px;
         transition: 0.3 ease-in-out;
+        z-index: 10;
     }
     .NavUL.active{
         left: -20px;
+        transition: 0.3 ease-in-out;
     }
     #mobile{
         display: block;
+    }
+}
+@media (max-width:300px){
+    .LogoDiv{
+        display: none;
     }
 }

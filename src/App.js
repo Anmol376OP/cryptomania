@@ -9,16 +9,18 @@ import News from './components/News';
 
 function App() {
   return (
-    <BrowserRouter>
-      <Navbar />
-      <Routes>
-        <Route path='/' element={<Homepage />}></Route>
-        <Route path='exchanges' element={<Exchanges />}></Route>
-        <Route path='cryptocurrencies' element={<Cryptocurrencies />}></Route>
-        <Route path='crypto/:coinId' element={<CryptoDetails />}></Route>
-        <Route path='news' element={<News />}></Route>
-      </Routes>
-    </BrowserRouter>
+    <div className='App-body'>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path='/' element={<Homepage />}></Route>
+          <Route path='exchanges' element={<Exchanges />}></Route>
+          <Route path='cryptocurrencies' element={<Cryptocurrencies />}></Route>
+          <Route path='crypto/:coinId' element={<CryptoDetails />}></Route>
+          <Route path='news' element={<News />}></Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
