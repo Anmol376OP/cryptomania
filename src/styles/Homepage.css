@@ -1,8 +1,9 @@
 .bg-home{
-    height: 100vh;
+    height: 95vh;
     width: 100%;
     background: transparent;
 }
+
 .sec-2{
     position: relative;
     height: 150vh;
@@ -120,6 +121,7 @@
     font-size: 70px;
     margin-left: 50px;
     padding: 20px;
+    height: auto;
 }
 .Card-Container{
     position: relative;
@@ -225,6 +227,10 @@
     .Card-Container{
         transform: scale(0.8);
     }
+    .sec-2{
+        height: 180vh;
+    }
+    
 }
 @media(max-width:800px){
     .Card-Container{
@@ -235,18 +241,141 @@
     .top3text{
         font-size: 30px;
     }
-    .Card-Container{
-        transform: scale(0.6);
-    }
+
 }
 @media(max-width:400px){
     .top3text{
         font-size: 20px;
     }
-    .Card-Container{
-        transform: scale(0.5);
+
+    .sec-2{
+        height: 220vh;
     }
+}
+.Bottomnews{
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vh;
+    gap: 20px;
+    width: 100%;
+}
+.Image-div-bottom{
+    /* flex: 0.3; */
+    height: 300px;
+    border-radius: 50%;
+    width: 300px;
+    background-image: url('../assets/bitcoinBG.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.Text-image{
+    flex: 0.6;
+    font-size: 40px;
+    font-weight: 400;
+}
+@media (max-width:900px){
+    .Image-div-bottom{
+        height: 200px;
+        width: 200px;
+    }
+    .Text-image{
+        font-size: 25px;
+    }
+    .Bottomnews{
+        margin-top: 15vh;
+    }
+}
+@media (max-width:601px){
+    .Image-div-bottom{
+        height: 200px;
+        width: 200px;
+    }
+    .Text-image{
+        flex: 0.7;
+        font-size: 25px;
+    }
+    .sec-2{
+        height: 200vh;
+    }
+    .Bottomnews{
+        margin-top: 10vh;
+    }
+}
+@media (max-width:500px){
+    .Image-div-bottom{
+        height: 150px;
+        width: 150px;
+    }
+    .Text-image{
+        font-size: 20px;
+    }
+    .Bottomnews{
+        margin-top: 15vh;
+    }
+}
+@media (max-width:400px){
+    .Image-div-bottom{
+        height: 120px;
+        width: 120px;
+    }
+    .Text-image{
+        font-size: 18px;
+    }
+    .Bottomnews{
+        margin-top: 15vh;
+    }
+}
+@media (max-width:300px){
+    .Image-div-bottom{
+        height: 100px;
+        width: 100px;
+    }
+    .Text-image{
+        font-size: 15px;
+    }
+    .Bottomnews{
+        margin-top: 15vh;
+    }
+}
+
+@media (min-height:800px){
     .sec-2{
         height: 160vh;
     }
+}
+@media (min-height:900px){
+    .sec-2{
+        height: 150vh;
+    }
+}
+@media (min-height:1000px){
+    .bg-home{
+        height: 80vh;
+    }
+    .sec-2{
+        height: 110vh;
+    }
+    .Bottomnews{
+        margin-top: 10vh;
+    }
+}
+@media (min-height:1200px){
+    .bg-home{
+        height: 80vh;
+    }
+    .sec-2{
+        height: 90vh;
+    }
+    .Bottomnews{
+        margin-top: 10vh;
+    }
+}
+.xyz{
+    color: gold ;
+    
+}
+.xyz:hover{
+    text-decoration: underline;
 }

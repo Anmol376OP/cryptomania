@@ -12,7 +12,7 @@ function Navbar() {
             <nav className='NavBox'>
                 <div className='LogoDiv'>
                     <div className='ImgDiv'></div>
-                    <div className='Name'>CryptoMania</div>
+                    <div className='Name'>Crypto<span style={{ color: 'gold' }}>Mania</span></div>
                 </div>
                 <ul className={isClicked ? 'NavUL active' : 'NavUL'}>
                     <li><Link to='/' className="elem">Home</Link></li>
