@@ -339,7 +339,14 @@
         margin-top: 15vh;
     }
 }
-
+@media(max-width:376px){
+    .bg-home{
+        height: 110vh;
+    }
+    .ReadMoreButton{
+        padding-bottom: '45px'
+    }
+}
 @media (min-height:800px){
     .sec-2{
         height: 160vh;

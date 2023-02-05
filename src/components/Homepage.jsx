@@ -5,6 +5,8 @@ import { useGetCryptosQuery } from '../services/cryptoAPI';
 import '../styles/Homepage.css'
 import millify from 'millify';
 import axios from 'axios';
+import '../components/Button.js'
+import ReadMoreButton from '../components/Button.js';
 
 const Homepage = () => {
     const { data, isFetching } = useGetCryptosQuery();
@@ -29,12 +31,15 @@ const Homepage = () => {
                     <div className='Home-text'>
                         <span className='HeadingText'>Welcome to </span>
                         <span className='cmania'>CryptoMania</span>
-                        <span className='paragraphText' style={{ marginTop: '10px' }}>
+                        <span className='paragraphText' style={{ marginTop: '15px' }}>
                             We provide you with the latest news and information about crypto.
                             Feel free to explore our website and get to know about the latest trends in the market.
                             From the top-tier cryptos rampaging in the market to the not so well known;
                             we have brought it to you right on your fingertips
                         </span>
+                        <Link to='/' className='ReadMoreButton' style={{ textDecoration: 'none', paddingTop: '25px' }}>
+                            <ReadMoreButton />
+                        </Link>
                     </div>
                     <div className='image'></div>
                 </div>
@@ -43,7 +48,7 @@ const Homepage = () => {
                 <p className='top3text'>Top 3 trending cryptos</p>
                 <div className='secFlex'>
                     <div className='Sec2Outbox'>
-                        <Link to='/'>
+                        <Link to='/cryptocurrencies'>
                             <div className='Card-Container'>
                                 <div className='Inner-container'>
                                     <h3 className='cheading'>
@@ -70,7 +75,7 @@ const Homepage = () => {
                         </Link>
                     </div>
                     <div className='Sec2Outbox'>
-                        <Link to='/'>
+                        <Link to='/cryptocurrencies'>
                             <div className='Card-Container' id='silver'>
                                 <div className='Inner-container'>
                                     <h3 className='cheading'>
@@ -89,7 +94,7 @@ const Homepage = () => {
                                         <span>Daily Change : </span>
                                         <span>{millify(cryptos ? cryptos[1].change : 0)}%</span>
                                     </span>
-                                    <button className='CButton'>
+                                    <button className='CButton' style={{ backgroundColor: '#c0c0c0' }}>
                                         Read More
                                     </button>
                                 </div>
@@ -97,7 +102,7 @@ const Homepage = () => {
                         </Link>
                     </div>
                     <div className='Sec2Outbox'>
-                        <Link to='/'>
+                        <Link to='/cryptocurrencies'>
                             <div className='Card-Container' id='bronze'>
                                 <div className='Inner-container'>
                                     <h3 className='cheading'>
@@ -116,7 +121,7 @@ const Homepage = () => {
                                         <span>Daily Change : </span>
                                         <span>{millify(cryptos ? cryptos[2].change : 0)}%</span>
                                     </span>
-                                    <button className='CButton'>
+                                    <button className='CButton' style={{ backgroundColor: '#CD7F32' }}>
                                         Read More
                                     </button>
                                 </div>

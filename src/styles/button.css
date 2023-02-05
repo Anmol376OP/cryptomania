@@ -1,0 +1,56 @@
+.Btn-body{
+    position: relative;
+    width: fit-content;
+}
+.Btn-inner{
+    background-color: transparent;
+    /* border-radius: 20px; */
+    height: fit-content;
+    width: fit-content;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 20px;
+    color: gold;
+    font-weight: 500;
+    overflow: hidden;
+}
+.Btn-body div::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid gold;
+    border-left: 2px solid gold;
+}
+.Btn-body div:hover::before{
+    transition: 0.5s;
+    width: 98%;
+    height: 97%;
+
+}
+.Btn-body div:hover::after{
+    transition: 0.5s;
+    width: 98%;
+    height: 97%;
+
+}
+.Btn-body div::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid gold;
+    border-right: 2px solid gold;
+}
+.Btn-body div:hover{
+    background: gold;
+    color: black;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+    box-shadow: 0 0 50px gold;
+}
