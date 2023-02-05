@@ -10,16 +10,6 @@ import ReadMoreButton from '../components/Button.js';
 
 const Homepage = () => {
     const { data, isFetching } = useGetCryptosQuery();
-    // const [user, setUser] = useState([]);
-    // const fetchData = () => {
-    //     return axios.get("https://newsapi.org/v2/everything?q=crypto&apiKey=75e5c75aa2a84d919c90f7bbd67b5c1f&page=1")
-    //         .then((response) => setUser(response.data));
-    // }
-
-    // useEffect(() => {
-    //     fetchData();
-    // }, [])
-    // console.log(user ? user.articles : '')
 
     var cryptos = data?.data?.coins;
 

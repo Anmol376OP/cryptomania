@@ -1,0 +1,131 @@
+.News-outbox{
+    min-height: 100vh;
+}
+.NewsItemContainer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.social button{
+    opacity: 100;
+    font-size: 18px;
+    color: #fff;
+    will-change: transform;
+    -webkit-transform: scale(0.75);
+    transform: scale(0.75);
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.card{
+    margin: 20px;
+    position: relative;
+    width: 500px;
+    height: 200px;
+    background-color: #fff;
+    overflow: hidden;
+    margin-bottom: 4px;
+}
+.card h4{
+    z-index: 99;
+    font-family: "Poppins", sans-serif;
+    position: absolute;
+    bottom: -10px;
+    right: 130px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    padding-left: 10px;
+}
+.fa-arrow-right {
+    z-index: 100;
+    position: absolute;
+    opacity: 0;
+    right: 75px;
+    bottom: 25px;
+    font-size: 40px;
+    cursor: pointer;
+}
+.card p {
+    z-index: 99;
+    position: absolute;
+    top: 20px;
+    right: 70px;
+    color: #333;
+    opacity: 0.7;
+    font-size: 12px;
+    letter-spacing: 1px;
+    writing-mode: vertical-lr;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+.card p:nth-of-type(1){
+    right: 50px;
+}
+.pic {
+    z-index: 100;
+    width: 400px;
+    height: 200px;
+    /* background-image: url($img-url); */
+    background-color: grey;
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(100%);
+  }
+.card:hover i{
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+} 
+
+.ExpandingButton{
+    position: absolute;
+      right: 14px;
+      bottom: 14px;
+      width: 30px;
+      height: 30px;
+      background-color: orange;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      outline:none;
+      transition: all 0.3s ease;
+      mix-blend-mode: hard-light;
+}
+.card:hover .ExpandingButton{
+    transform: scale(16.5);
+}
+.card:hover .pic{
+    filter: grayscale(0);
+}
+.card:hover .fa-arrow-right{
+    opacity: 100;
+    color: #fff;
+}
+@media (max-width:600px){
+    .card{
+        width: 400px;
+    }
+    .pic{
+        width: 300px;
+    }
+}
+@media (max-width:500px){
+    .card{
+        width: 300px;
+    }
+    .ExpandingButton{
+        display: none;
+    }
+    .card p{
+        display: none;
+    }
+    .fa-arrow-right{
+        right: 50px;
+    }
+    .card h4{
+        right: 100px;
+    }
+}
