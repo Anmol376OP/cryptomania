@@ -22,7 +22,7 @@ const Cryptocurrencies = () => {
     }, [cryptos, searchTerm])
 
     if (data) { } else return (<div>
-        <h2>Loading....</h2>
+        <h2 style={{ height: '100vh' }}>Loading....</h2>
     </div>)
 
 

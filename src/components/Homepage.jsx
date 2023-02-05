@@ -22,7 +22,7 @@ const Homepage = () => {
     // console.log(user ? user.articles : '')
 
     var cryptos = data?.data?.coins;
-    // console.log(cryptos[1])
+
     return (
         <div className='Homepage-box'>
             <section className='bg-home'>

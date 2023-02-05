@@ -16,9 +16,7 @@ function Navbar() {
                 </div>
                 <ul className={isClicked ? 'NavUL active' : 'NavUL'}>
                     <li><Link to='/' className="elem">Home</Link></li>
-                    <li><Link to='/exchanges' className="elem">Exchange</Link></li>
                     <li><Link to='/cryptocurrencies' className="elem">Currencies</Link></li>
-                    <li><Link to='/crypto/:coinId' className="elem">CryptoDetails</Link></li>
                     <li><Link to='/news' className="elem">News</Link></li>
                 </ul>
                 <div id='mobile'>
