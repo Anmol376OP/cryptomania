@@ -37,7 +37,7 @@ const Homepage = () => {
                             From the top-tier cryptos rampaging in the market to the not so well known;
                             we have brought it to you right on your fingertips
                         </span>
-                        <Link to='/' className='ReadMoreButton' style={{ textDecoration: 'none', paddingTop: '25px' }}>
+                        <Link to='/cryptocurrencies' className='ReadMoreButton' style={{ textDecoration: 'none', paddingTop: '25px' }}>
                             <ReadMoreButton />
                         </Link>
                     </div>
