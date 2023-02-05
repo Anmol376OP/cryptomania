@@ -1,7 +1,9 @@
 .News-outbox{
-    min-height: 100vh;
+    height: fit-content;
+    background-color: black;
     overflow-x: scroll;
 }
+
 .NewsItemContainer{
     width: fit-content;
     height: 100%;

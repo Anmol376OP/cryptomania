@@ -11,18 +11,18 @@ const Cryptocurrencies = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const [cryptos, setCryptos] = useState(data?.data?.coins);
-    // To avoid nul data while refreshing
+
     useEffect(() => {
         setCryptos(data?.data?.coins)
-    })
-    // for search queries
+    }, [data])
+
     useEffect(() => {
         const filteredData = data?.data?.coins.filter((coin) => coin.name.toLowerCase().includes(searchTerm.toLowerCase()));
         setCryptos(filteredData)
     }, [cryptos, searchTerm])
 
     if (data) { } else return (<div>
-        <h2 style={{ height: '100vh' }}>Loading....</h2>
+        <h2 style={{ height: '100vh', color: 'white' }}>Loading....</h2>
     </div>)
 
 
@@ -34,7 +34,7 @@ const Cryptocurrencies = () => {
             </div>
             <div className='BoxCC'>
                 {cryptos ? cryptos.map((index) => (
-                    <div className='CardContainer' key={index.id}>
+                    <div className='CardContainer' key={index.uuid}>
                         <div className='Card-box'>
                             <div className='Card-Content'>
                                 <span className='Title'>{index.name}</span>

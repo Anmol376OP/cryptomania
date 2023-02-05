@@ -7,7 +7,7 @@ import News from './components/News';
 
 function App() {
   return (
-    <div className='App-body'>
+    <section className='App-body'>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -16,7 +16,7 @@ function App() {
           <Route path='news' element={<News />}></Route>
         </Routes>
       </BrowserRouter>
-    </div>
+    </section>
   );
 }
 

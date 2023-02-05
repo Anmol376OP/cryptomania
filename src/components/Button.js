@@ -1,11 +1,11 @@
 import React from "react";
 import '../styles/button.css'
 
-function ReadMoreButton() {
+function ReadMoreButton({ title }) {
     return (
         <div className="Btn-body">
             <div className="Btn-inner">
-                Explore Crypto
+                {title}
             </div>
         </div>
     )
