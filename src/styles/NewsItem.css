@@ -1,13 +1,15 @@
 .News-outbox{
     min-height: 100vh;
+    overflow-x: scroll;
 }
 .NewsItemContainer{
-    width: 100%;
+    width: fit-content;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    /* flex-direction: row; */
 }
 .social button{
     opacity: 100;
@@ -29,7 +31,7 @@
     margin-bottom: 4px;
 }
 .card h4{
-    z-index: 99;
+    z-index: 1;
     font-family: "Poppins", sans-serif;
     position: absolute;
     bottom: -10px;
@@ -49,7 +51,7 @@
     cursor: pointer;
 }
 .card p {
-    z-index: 99;
+    z-index: 1;
     position: absolute;
     top: 20px;
     right: 70px;
@@ -82,17 +84,18 @@
 
 .ExpandingButton{
     position: absolute;
-      right: 14px;
-      bottom: 14px;
-      width: 30px;
-      height: 30px;
-      background-color: orange;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      outline:none;
-      transition: all 0.3s ease;
-      mix-blend-mode: hard-light;
+    right: 14px;
+    bottom: 14px;
+    width: 30px;
+    height: 30px;
+    background-color: orange;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    outline:none;
+    transition: all 0.3s ease;
+    mix-blend-mode: hard-light;
+    pointer-events: none;
 }
 .card:hover .ExpandingButton{
     transform: scale(16.5);
@@ -126,6 +129,17 @@
         right: 50px;
     }
     .card h4{
-        right: 100px;
+        right: 0px;
+        font-size: 15px;
+    }
+    .pic{
+        filter: grayscale(0%);
+        filter: opacity(85%);
+    }
+}
+@media (max-width:350px){
+    .card h4{
+        right: 0px;
+        font-size: 12px;
     }
 }

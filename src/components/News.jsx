@@ -22,8 +22,8 @@ const News = () => {
             <div className='NewsItemContainer'>
                 {user.articles ? user.articles.map((index) => (
                     <div className="card" key={index.id}>
-                        <h4>{index.title ? index.title : 'Title'}</h4>
-                        <i className="fas fa-arrow-right"></i>
+                        <h4><a target='_blank' href={index.url ? index.url : ''} style={{ textDecoration: 'none', color: 'white' }}>{index.title ? index.title : 'Title'}</a></h4>
+                        <a target='_blank' href={index.url ? index.url : ''} style={{ textDecoration: 'none', color: 'white' }}><i className="fas fa-arrow-right"></i></a>
                         <p>{index.author ? index.author.substring(0, 25) : 'Anonymous'}</p>
                         <p>{index.publishedAt ? index.publishedAt : 'Loading ...'}</p>
                         <div className="pic" style={index.urlToImage ? { backgroundImage: `url(${index.urlToImage})` } : ''} alt=''></div>
