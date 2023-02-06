@@ -17,7 +17,7 @@ const Cryptocurrencies = () => {
     const [cryptos, setCryptos] = useState(data?.data?.coins);
     const [logo, setLogo] = useState('https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg')
     const [title, setTitle] = useState('Bitcoin')
-    const [change, setChange] = useState('-1%')
+    const [change, setChange] = useState('-1')
     const [price, setPrice] = useState('23K')
     const [vol, setVol] = useState('2B')
     const [tier, setTier] = useState('1')
@@ -75,9 +75,10 @@ const Cryptocurrencies = () => {
                         }
                     ]
                 }} options={optionsChart} className="Chart"></Line>
-                <div className='Display' style={{ border: `2px solid ${color}` }}>
+                <div className='Display' style={{ border: `3px solid ${color}` }}>
                     <div className='logo-here' style={{ backgroundImage: `url(${logo})` }}></div>
                     <div className='displayName'>{title}</div>
+                    <div class="fade_rule" style={{ backgroundImage: `-webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, white), color-stop(0.5, ${color}), color-stop(0.98, white) )` }}></div>
                     <div className='Statbox'>
                         <div className='Stat'>Symbol : </div>
                         <div className='Val'>{symbol}</div>
@@ -100,7 +101,7 @@ const Cryptocurrencies = () => {
                     </div>
                     <div className='Statbox'>
                         <div className='Stat'>Percentage Change : </div>
-                        <div className='Val'>{change}%</div>
+                        <div className='Val' style={change < 0 ? { color: 'red' } : { color: 'green' }}>{change < 0 ? '' : '+'}{change}%</div>
                     </div>
 
                     <div className='Statbox'>
@@ -109,6 +110,7 @@ const Cryptocurrencies = () => {
                     </div>
                 </div>
             </section>
+            <div class="fade_rule2" style={{ backgroundImage: `-webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, black), color-stop(0.5, white), color-stop(0.98, black) )` }}></div>
             <div className='BoxCC'>
                 {cryptos ? cryptos.map((index) => (
                     <div className='CardContainer' key={index.uuid}>
@@ -120,13 +122,34 @@ const Cryptocurrencies = () => {
                             setPrice(millify(index.price));
                             setChange(index.change);
                             setCap(millify(index.marketCap));
-                            setVol(millify(index.listedAt))
-                            setColor(index.color)
+                            setVol(millify(index.listedAt));
+                            setColor(index.color);
+                            setTier(index.tier);
+                            setSymbol(index.symbol);
                             console.log(cryptos);
                         }}>
-                            <div className='Card-face front'>
-                                <span className='Title'>{index.name}</span>
+                            <div className='Card-face'>
+                                <span className='Title'>{index.rank}. {index.name}</span>
+                                <div className='FlexStat'>
+                                    <div className='Statbox m0'>
+                                        <div className='Stat'>Symbol : </div>
+                                        <div className='Val'>{symbol}</div>
+                                    </div>
+                                    <div className='Statbox m0'>
+                                        <div className='Stat'>Price ($) : </div>
+                                        <div className='Val'>{price}</div>
+                                    </div>
+                                    <div className='Statbox m0'>
+                                        <div className='Stat'>Change : </div>
+                                        <div className='Val' style={change < 0 ? { color: 'red' } : { color: 'green' }}>{change < 0 ? '' : '+'}{change}%</div>
+                                    </div>
+                                    <div className='Statbox m0'>
+                                        <div className='Stat'>Market Cap : </div>
+                                        <div className='Val'>{cap}</div>
+                                    </div>
+                                </div>
                             </div>
+                            <div className='ImgBg' style={{ backgroundImage: `url(${index.iconUrl})` }}></div>
                         </div>
                     </div>
                 )) : ''}
