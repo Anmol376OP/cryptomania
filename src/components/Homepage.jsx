@@ -8,7 +8,7 @@ import ReadMoreButton from '../components/Button.js';
 const Homepage = () => {
     const { data, isFetching } = useGetCryptosQuery();
     var cryptos = data?.data?.coins;
-    console.log(cryptos)
+    // console.log(cryptos[0].sparkline)
     return (
         <div className='Homepage-box'>
             <section className='bg-home'>
