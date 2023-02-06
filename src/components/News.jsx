@@ -22,7 +22,7 @@ const News = () => {
             console.error(error);
         });
     }, [])
-    console.log(user)
+    // console.log(user)
 
     if (user) { } else return (<div>
         <h2 style={{ height: '100vh', color: 'white' }}>Loading....</h2>
