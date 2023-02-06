@@ -15,7 +15,15 @@ ChartJS.register(
 const Cryptocurrencies = () => {
     const { data, isFetching } = useGetCryptosQuery();
     const [cryptos, setCryptos] = useState(data?.data?.coins);
-    const [isFlipped, setIsFlipped] = useState(false)
+    const [logo, setLogo] = useState('https://cdn.coinranking.com/bOabBYkcX/bitcoin_btc.svg')
+    const [title, setTitle] = useState('Bitcoin')
+    const [change, setChange] = useState('-1%')
+    const [price, setPrice] = useState('23K')
+    const [vol, setVol] = useState('2B')
+    const [tier, setTier] = useState('1')
+    const [cap, setCap] = useState('44B')
+    const [symbol, setSymbol] = useState('BTC')
+    const [rank, setRank] = useState('1')
     const [x, setX] = useState(1)
     useEffect(() => {
         setCryptos(data?.data?.coins)
@@ -44,7 +52,7 @@ const Cryptocurrencies = () => {
     }
 
     if (cryptos) { } else return (<div>
-        <h2 style={{ height: '100vh', color: 'white' }}>Loading....</h2>
+        <h2 style={{ height: '110vh', color: 'white' }}>Loading....</h2>
     </div>)
 
     function Clicked(ind) {
@@ -53,25 +61,67 @@ const Cryptocurrencies = () => {
 
     return (
         <div className='Cr-outbox'>
-            <Line data={{
-                labels: lb,
-                datasets: [
-                    {
-                        labels: '24h Analysis',
-                        data: cryptos ? cryptos[x - 1].sparkline : [],
-                        pointRadius: 0,
-                        backgroundColor: 'transparent',
-                        borderColor: 'white',
-                    }
-                ]
-            }} options={optionsChart} className="Chart"></Line>
-            <div className='Display'>
-                BItcoin
-            </div>
+            <section className='sec-1'>
+                <Line data={{
+                    labels: lb,
+                    datasets: [
+                        {
+                            labels: '24h Analysis',
+                            data: cryptos ? cryptos[x - 1].sparkline : [],
+                            pointRadius: 0,
+                            backgroundColor: 'transparent',
+                            borderColor: 'white',
+                        }
+                    ]
+                }} options={optionsChart} className="Chart"></Line>
+                <div className='Display'>
+                    <div className='logo-here' style={{ backgroundImage: `url(${logo})` }}></div>
+                    <div className='displayName'>{title}</div>
+                    <div className='Statbox'>
+                        <div className='Stat'>Symbol : </div>
+                        <div className='Val'>{symbol}</div>
+                    </div>
+                    <div className='Statbox'>
+                        <div className='Stat'>Rank : </div>
+                        <div className='Val'>{rank}</div>
+                    </div>
+                    <div className='Statbox'>
+                        <div className='Stat'>Price ($) : </div>
+                        <div className='Val'>{price}</div>
+                    </div>
+                    <div className='Statbox'>
+                        <div className='Stat'>Tier : </div>
+                        <div className='Val'>{tier}</div>
+                    </div>
+                    <div className='Statbox'>
+                        <div className='Stat'>Listed At : </div>
+                        <div className='Val'>{vol}</div>
+                    </div>
+                    <div className='Statbox'>
+                        <div className='Stat'>Percentage Change : </div>
+                        <div className='Val'>{change}%</div>
+                    </div>
+
+                    <div className='Statbox'>
+                        <div className='Stat'>Market Cap : </div>
+                        <div className='Val'>{cap}</div>
+                    </div>
+                </div>
+            </section>
             <div className='BoxCC'>
                 {cryptos ? cryptos.map((index) => (
                     <div className='CardContainer' key={index.uuid}>
-                        <div className={isFlipped ? 'Card-box flipped' : 'Card-box'} onClick={() => setX(index.rank)}>
+                        <div className='Card-box' onClick={() => {
+                            setX(index.rank);
+                            setLogo(index.iconUrl);
+                            setTitle(index.name);
+                            setRank(index.rank);
+                            setPrice(millify(index.price));
+                            setChange(index.change);
+                            setCap(millify(index.marketCap));
+                            setVol(millify(index.listedAt))
+                            console.log(cryptos);
+                        }}>
                             <div className='Card-face front'>
                                 <span className='Title'>{index.name}</span>
                             </div>
