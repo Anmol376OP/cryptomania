@@ -25,6 +25,7 @@ const Cryptocurrencies = () => {
     const [symbol, setSymbol] = useState('BTC')
     const [rank, setRank] = useState('1')
     const [x, setX] = useState(1)
+    const [color, setColor] = useState('orange')
     useEffect(() => {
         setCryptos(data?.data?.coins)
     }, [data])
@@ -70,11 +71,11 @@ const Cryptocurrencies = () => {
                             data: cryptos ? cryptos[x - 1].sparkline : [],
                             pointRadius: 0,
                             backgroundColor: 'transparent',
-                            borderColor: 'white',
+                            borderColor: change > 0 ? 'green' : 'red',
                         }
                     ]
                 }} options={optionsChart} className="Chart"></Line>
-                <div className='Display'>
+                <div className='Display' style={{ border: `2px solid ${color}` }}>
                     <div className='logo-here' style={{ backgroundImage: `url(${logo})` }}></div>
                     <div className='displayName'>{title}</div>
                     <div className='Statbox'>
@@ -120,6 +121,7 @@ const Cryptocurrencies = () => {
                             setChange(index.change);
                             setCap(millify(index.marketCap));
                             setVol(millify(index.listedAt))
+                            setColor(index.color)
                             console.log(cryptos);
                         }}>
                             <div className='Card-face front'>

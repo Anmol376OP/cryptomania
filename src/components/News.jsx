@@ -6,6 +6,7 @@ import Input from 'rc-input';
 
 const News = () => {
     const [user, setUser] = useState([]);
+    const [resp, setResp] = useState(false);
     const options = {
         method: 'GET',
         url: 'https://investing-cryptocurrency-markets.p.rapidapi.com/coins/get-news',
@@ -18,13 +19,13 @@ const News = () => {
     useEffect(() => {
         axios.request(options).then(function (response) {
             setUser(response.data.data[0].screen_data.news);
+            setResp(true);
         }).catch(function (error) {
             console.error(error);
         });
     }, [])
-    // console.log(user)
 
-    if (user) { } else return (<div>
+    if (resp) { } else return (<div>
         <h2 style={{ height: '100vh', color: 'white' }}>Loading....</h2>
     </div>)
 
