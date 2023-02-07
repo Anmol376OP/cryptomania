@@ -270,5 +270,15 @@
     color: white;
     font-size: 25px;
     padding: 10px;
-   
+   font-weight: 600;
+}
+@media (max-width:900px){
+    .innerText1{
+        font-size: 20px;
+    }
+}
+@media (max-width:600px){
+    .innerText1{
+        font-size: 15px;
+    }
 }
