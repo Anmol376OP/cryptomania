@@ -33,6 +33,8 @@ const News = () => {
 
     return (
         <div className='News-outbox'>
+            <div className='Trending'>Trending Today</div>
+            <div className="fade_rulex" style={{ backgroundImage: `-webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, gold), color-stop(0.5, gold), color-stop(0.98, black) )` }}></div>
             <div className='News-main'>
                 <div className='box-row'>
                     <div className='box-row-item1' style={user ? { backgroundImage: `url(${user[0].related_image_big})` } : {}}></div>
@@ -46,6 +48,8 @@ const News = () => {
                     </div>
                 </div>
             </div>
+            <div className='Trending' style={{ marginTop: '20px' }}>More From Crypto</div>
+            <div className="fade_rulex" style={{ backgroundImage: `-webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, gold), color-stop(0.5, gold), color-stop(0.98, black) )` }}></div>
             <div className='NewsItemContainer'>
                 {user ? user.slice(4, 14).map((index) => (
                     <div className="card">

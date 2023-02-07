@@ -11,6 +11,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     /* flex-direction: row; */
 }
@@ -241,4 +242,19 @@
     .box-row{
         height: 50vh;
     }
+}
+.Trending{
+    color: white;
+    margin-left: 2.5vw;
+    padding: 5px 10px 5px 10px;
+    font-size: 26px;
+    font-weight: 600;
+    width: fit-content;
+    /* background-color: gold; */
+}
+.fade_rulex{
+    height: 2px;
+    background-color: #E6E6E6;
+    width: 95%;
+    margin: 0 auto;
 }
