@@ -159,6 +159,8 @@
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 10px;
+    display: flex;
+    align-items: end;
 }
 .box-row-item2{
     flex: 0.5;
@@ -174,6 +176,8 @@
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 10px;
+    display: flex;
+    align-items: end;
 }
 .col-2{
     flex: 0.5;
@@ -191,6 +195,8 @@
     background-repeat: no-repeat;
     margin: 0px 10px 0 10px; 
     border-radius: 10px;
+    display: flex;
+    align-items: end;
 }
 .inner-2{
     flex: 0.5;
@@ -200,6 +206,8 @@
     background-repeat: no-repeat;
     margin: 0px 10px 0px 0;
     border-radius: 10px;
+    display: flex;
+    align-items: end;
 }
 @media (max-width:1250px){
     .inner-1{
@@ -257,4 +265,10 @@
     background-color: #E6E6E6;
     width: 95%;
     margin: 0 auto;
+}
+.innerText1{
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+   
 }

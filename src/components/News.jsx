@@ -37,13 +37,12 @@ const News = () => {
             <div className="fade_rulex" style={{ backgroundImage: `-webkit-gradient( linear, left bottom, right bottom, color-stop(0.02, gold), color-stop(0.5, gold), color-stop(0.98, black) )` }}></div>
             <div className='News-main'>
                 <div className='box-row'>
-                    <div className='box-row-item1' style={user ? { backgroundImage: `url(${user[0].related_image_big})` } : {}}></div>
+                    <div className='box-row-item1' style={user ? { backgroundImage: `url(${user[0].related_image_big})` } : {}}><div className='innerText1'>{user[0].HEADLINE}</div></div>
                     <div className='box-row-item2'>
-                        <div className='col-1' style={user ? { backgroundImage: `url(${user[1].related_image_big})` } : {}}>
-                        </div>
+                        <div className='col-1' style={user ? { backgroundImage: `url(${user[1].related_image_big})` } : {}}><div className='innerText1'>{user[1].HEADLINE}</div></div>
                         <div className='col-2'>
-                            <div className='inner-1' style={user ? { backgroundImage: `url(${user[2].related_image_big})` } : {}}></div>
-                            <div className='inner-2' style={user ? { backgroundImage: `url(${user[3].related_image_big})` } : {}}></div>
+                            <div className='inner-1' style={user ? { backgroundImage: `url(${user[2].related_image_big})` } : {}}><div className='innerText1'>{user[2].HEADLINE}</div></div>
+                            <div className='inner-2' style={user ? { backgroundImage: `url(${user[3].related_image_big})` } : {}}><div className='innerText1'>{user[3].HEADLINE}</div></div>
                         </div>
                     </div>
                 </div>
