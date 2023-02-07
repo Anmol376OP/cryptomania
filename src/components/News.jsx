@@ -34,9 +34,21 @@ const News = () => {
 
     return (
         <div className='News-outbox'>
-
+            <div className='News-main'>
+                <div className='box-row'>
+                    <div className='box-row-item1' style={user ? { backgroundImage: `url(${user[0].related_image_big})` } : {}}></div>
+                    <div className='box-row-item2'>
+                        <div className='col-1' style={user ? { backgroundImage: `url(${user[1].related_image_big})` } : {}}>
+                        </div>
+                        <div className='col-2'>
+                            <div className='inner-1' style={user ? { backgroundImage: `url(${user[2].related_image_big})` } : {}}></div>
+                            <div className='inner-2' style={user ? { backgroundImage: `url(${user[3].related_image_big})` } : {}}></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className='NewsItemContainer'>
-                {user ? user.map((index) => (
+                {user ? user.slice(4, 14).map((index) => (
                     <div className="card">
                         <h4><a target='_blank' href={index.news_link ? index.news_link : ''} style={{ textDecoration: 'none', color: 'white' }}>{index.HEADLINE ? index.HEADLINE : 'Title'}</a></h4>
                         <a target='_blank' href={index.news_link ? index.news_link : ''} style={{ textDecoration: 'none', color: 'white' }}><i className="fas fa-arrow-right"></i></a>
