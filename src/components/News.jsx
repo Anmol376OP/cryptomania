@@ -21,7 +21,6 @@ const News = () => {
         axios.request(options).then(function (response) {
             setUser(response.data.data[0].screen_data.news);
             setResp(true);
-            console.log(user)
         }).catch(function (error) {
             console.error(error);
         });
