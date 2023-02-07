@@ -14,16 +14,6 @@
     flex-wrap: wrap;
     /* flex-direction: row; */
 }
-.social button{
-    opacity: 100;
-    font-size: 18px;
-    color: #fff;
-    will-change: transform;
-    -webkit-transform: scale(0.75);
-    transform: scale(0.75);
-    -webkit-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
 .card{
     margin: 20px;
     position: relative;
